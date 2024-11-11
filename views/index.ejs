@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>Welcome to <%= title %>
+    </h1>
+    <p>This is a simple view created with EJS.</p>
+
+    <Form method="post" action="/user/create-user"
+        style="display: flex; flex-direction: column; height: 200px; gap: 20px; width: 100vw; justify-content: center; align-items: center;">
+        <div>
+            <label>Name:</label>
+            <input type="text" placeholder="Enter yur name" name="name" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="text" placeholder="Enter Password" name="password" />
+        </div>
+        <button type="submit">submit</button>
+    </Form>
+
+    <% if (success_msg.length> 0) { %>
+        <div style="color: green;">
+            <%= success_msg %>
+        </div>
+
+        <% } %>
+            <% if (error_msg.length> 0) { %>
+                <div style="color: red;">
+                    <%= error_msg %>
+                </div>
+                <% } %>
+
+</body>
+
+</html>
